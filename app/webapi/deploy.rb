@@ -8,6 +8,7 @@ module Deploy
             post do
                 deploy = Deploy::Webhook.new(request, params)
                 deploy.pull
+                "hogehoge"
             end
         end
     end
