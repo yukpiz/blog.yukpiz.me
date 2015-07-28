@@ -13,9 +13,9 @@ class Github::Webhook
 
         puts @request.body
         puts sha1
-        puts hmac
 
         hmac = OpenSSL::HMAC.hexdigest("sha1", "aiueo", @request.body)
+        puts hmac
 
 
         case eventtype
