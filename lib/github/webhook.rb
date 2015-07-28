@@ -14,6 +14,7 @@ class Github::Webhook
         hmac = OpenSSL::HMAC.hexdigest("sha1", "aiueo", @request.body)
 
         puts @request.body
+
         puts sha1
         puts hmac
 
