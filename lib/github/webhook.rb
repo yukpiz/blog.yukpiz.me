@@ -11,7 +11,7 @@ class Github::Webhook
         eventtype = headers["X-Github-Event"]
         sha1 = headers["X-Hub-Signature"]
 
-        puts @request.body
+        puts @request.payload
         puts sha1
 
         hmac = OpenSSL::HMAC.hexdigest("sha1", "aiueo", @request.body)
