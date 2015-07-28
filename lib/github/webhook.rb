@@ -1,3 +1,5 @@
+require "openssl"
+
 class Github::Webhook
     def initialize(request, params)
         @request = request
@@ -9,7 +11,9 @@ class Github::Webhook
         eventtype = headers["X-Github-Event"]
         sha1 = headers["X-Hub-Signature"]
 
+        hmac = OpenSSL.HMAC.hexdigest("sha1", "aiueo", @params)
         puts sha1
+        puts hmac
 
         case eventtype
         when "push"
