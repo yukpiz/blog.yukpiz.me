@@ -1,4 +1,5 @@
 require "openssl"
+require "json"
 
 class Github::Webhook
     def initialize(request, params)
@@ -12,6 +13,7 @@ class Github::Webhook
         sha1 = headers["X-Hub-Signature"]
 
         puts @request.body.read
+        puts JSON.parse(params[:payload]).inspect
         puts sha1
 
         hmac = OpenSSL::HMAC.hexdigest("sha1", "aiueo", @request.body.read)
