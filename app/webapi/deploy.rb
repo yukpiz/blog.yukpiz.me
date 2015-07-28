@@ -6,9 +6,8 @@ module Deploy
         resource :deploy do
             desc "Auto Deploy."
             post do
-                deploy = Deploy::Webhook.new(request, params)
-                deploy.pull
-                "hogehoge"
+                github = Github::Webhook.new(request, params)
+                github.pull
             end
         end
     end
