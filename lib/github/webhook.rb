@@ -5,6 +5,5 @@ class Github::Webhook
     end
 
     def pull
-        puts @request
     end
 end
