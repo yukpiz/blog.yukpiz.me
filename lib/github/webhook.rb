@@ -5,5 +5,19 @@ class Github::Webhook
     end
 
     def pull
+        headers = @request.headers
+        eventtype = headers["X-Github-Event"]
+        sha1 = headers["X-Hub-Signature"]
+        puts sha1
+
+        case eventtype
+        when "push"
+            return if @params["ref"] != "refs/heads/master"
+
+            system("cd #{Rails.root}")
+            system("git pull")
+        else
+            puts "It the assumed not events."
+        end
     end
 end
