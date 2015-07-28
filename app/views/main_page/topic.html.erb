@@ -1,0 +1,13 @@
+<div class="topic-accordion">
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <span class="topic-toggle"><%= article.title %></span>
+        <ul>
+          <p>コンテンツはここ</p>
+          <%= article.html.html_safe %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>
