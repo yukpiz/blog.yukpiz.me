@@ -1,8 +1,13 @@
+<div class="back-picture"></div>
+<div class="back-tile"></div>
 <div class="topic-accordion">
   <ul>
     <% @articles.each do |article| %>
       <li>
-        <span class="topic-toggle"><%= article.title %></span>
+        <span class="topic-toggle">
+          <span><%= article.title %></span>
+          <span><%= article.posted %></span>
+        </span>
         <ul>
           <p>コンテンツはここ</p>
           <%= article.html.html_safe %>
