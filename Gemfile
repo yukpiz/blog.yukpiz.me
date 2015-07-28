@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'jquery-rails'
+gem 'nokogiri'
+gem 'redcarpet'
 gem 'rb-readline'
 gem 'grape'
 gem 'mongoid', '4.0.0'

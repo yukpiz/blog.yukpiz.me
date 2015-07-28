@@ -25,5 +25,7 @@ module GistBlog
     config.autoload_paths += Dir["#{Rails.root}/app/webapi/*"]
     config.autoload_paths += %W(#{Rails.root}/lib)
     config.active_record.raise_in_transactional_callbacks = true
+
+    ENV.update YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env]
   end
 end

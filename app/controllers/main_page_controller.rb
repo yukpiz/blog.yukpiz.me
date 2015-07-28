@@ -1,4 +1,6 @@
 class MainPageController < ApplicationController
-  def main
-  end
+    def topic
+        @articles = Article.where(:activate => true)
+        puts @articles
+    end
 end
