@@ -13,7 +13,7 @@ class Github::Webhook
         sha1 = headers["X-Hub-Signature"]
 
         puts @request.body.read
-        puts JSON.parse(params)
+        puts JSON.parse(@params)
         puts sha1
 
         hmac = OpenSSL::HMAC.hexdigest("sha1", "aiueo", @request.body.read)
