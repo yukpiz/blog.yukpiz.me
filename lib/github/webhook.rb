@@ -8,6 +8,7 @@ class Github::Webhook
         headers = @request.headers
         eventtype = headers["X-Github-Event"]
         sha1 = headers["X-Hub-Signature"]
+
         puts sha1
 
         case eventtype
