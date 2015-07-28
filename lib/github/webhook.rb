@@ -1,5 +1,4 @@
 require "json"
-require "digest/hmac"
 
 class Github::Webhook
     def initialize(request, params)
