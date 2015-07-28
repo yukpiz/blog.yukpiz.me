@@ -54,28 +54,6 @@ body {
     li {
         list-style:none;
     }
-    li {
-        &:first-child {
-            .topic-toggle {
-                border-top-left-radius:10px;
-                -webkit-border-top-left-radius:10px;
-                -moz-border-top-left-radius:10px;
-                border-top-right-radius:10px;
-                -webkit-border-top-right-radius:10px;
-                -moz-border-top-right-radius:10px;
-            }
-        }
-        &:last-child {
-            .topic-toggle {
-                border-bottom-left-radius:10px;
-                -webkit-border-bottom-left-radius:10px;
-                -moz-border-bottom-left-radius:10px;
-                border-bottom-right-radius:10px;
-                -webkit-border-bottom-right-radius:10px;
-                -moz-border-bottom-right-radius:10px;
-            }
-        }
-    }
     a,
     .topic-toggle {
         height:50px;
@@ -83,10 +61,14 @@ body {
         display:block;
         position:relative;
         padding-left:20px;
+        margin-top:10px;
         text-decoration:none;
         font-size:9pt;
+        -webkit-border-radius:7px;
+        -moz-border-radius:7px;
+        border-radius:7px;
         border-top:solid 1px #ccc;
-        background-color:white;
+        background-color:#e7e7e7;
         color: #333333;
         cursor: pointer;
         -webkit-transition: .2s ease-in-out;
@@ -94,6 +76,15 @@ body {
             background-color:#eee;
         }
     }
+    .topic-toggle.toggle-open{
+        -webkit-border-bottom-left-radius:0px;
+        -moz-border-bottom-left-radius:0px;
+        border-bottom-left-radius:0px;
+        -webkit-border-bottom-right-radius:0px;
+        -moz-border-bottom-right-radius:0px;
+        border-bottom-right-radius:0px;
+    }
+
     .topic-toggle {
         &:after {
             display:block;
@@ -120,7 +111,7 @@ body {
         padding:10px 10px 10px 10px;
         font-size:small;
         overflow:hidden;
-        background-color:white;
+        background-color:#e7e7e7;
         li {
             a {
                 line-height:40px;
