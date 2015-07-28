@@ -7,6 +7,7 @@ class Github::Webhook
     end
 
     def pull
+
         headers = @request.headers
         eventtype = headers["X-Github-Event"]
         sha1 = headers["X-Hub-Signature"]
