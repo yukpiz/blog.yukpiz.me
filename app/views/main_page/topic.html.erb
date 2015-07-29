@@ -9,8 +9,11 @@
           <span><%= article.posted %></span>
         </span>
         <ul>
-          <p>コンテンツはここ</p>
-          <%= article.html.html_safe %>
+          <div class="content">
+            <!-- Content of article -->
+            <div class="posted"><%= article.posted %></div>
+            <%= article.html.html_safe %>
+          </div>
         </ul>
       </li>
     <% end %>
