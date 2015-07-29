@@ -109,8 +109,15 @@ class Github::Gist
 
     def md2html(markdown)
         require "redcarpet"
-        redcarpet = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-        redcarpet.render(markdown)
+        parse = Redcarpet::Markdown.new(
+            Redcarpet::Render::HTML,
+            autolink: true,
+            tables: true,
+            fenced_code_blocks: true,
+            highlight: true,
+        )
+
+        parse.render(markdown)
     end
 
     def html2object(html)
