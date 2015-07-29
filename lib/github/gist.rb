@@ -153,11 +153,11 @@ class Github::Gist
             when "posted"
                 dates = splited[1].strip.split("-")
                 next if dates.length != 3
-                meta[:posted] = [
+                meta[:posted] = "%04d-%02d-%02d" % [
                     dates[0].to_i,
                     dates[1].to_i,
-                    dates[2].to_i
-                ].join("-")
+                    dates[2].to_i,
+                ]
             when "activate"
                 meta[:activate] = splited[1].strip.downcase == "true" ? true : false
             end
