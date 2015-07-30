@@ -49,7 +49,7 @@ class Github::Gist
             end
 
             Gisthead.create!({
-                id: row["id"],
+                gist_id: row["id"],
                 url: row["url"],
                 html_url: row["html_url"],
                 description: row["description"],
@@ -87,6 +87,7 @@ class Github::Gist
                 html = md2html(markdown)
 
                 Article.create!({
+                    gist_id: gisthead[:gist_id],
                     title: meta[:title],
                     tags: meta[:tags],
                     posted: meta[:posted],

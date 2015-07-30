@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'main_page#topic'
+  root 'topic#first'
+  get '/article/:id' => 'article#single'
   mount Deploy::API => "/"
   mount Import::API => "/"
   mount Convert::API => "/"

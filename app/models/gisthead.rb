@@ -2,7 +2,7 @@ class Gisthead
     include Mongoid::Document
     include Mongoid::Timestamps
 
-    field :id, type: String
+    field :gist_id, type: String
     field :url, type: String
     field :html_url, type: String
     field :description, type: String
