@@ -1,0 +1,36 @@
+.back-picture {
+  position: fixed;
+  background-size:cover;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+@keyframes back-tile {
+  0% { background-color:#1a1a1a; }
+  10% { background-color:#383838; }
+  20% { background-color:#585858; }
+  30% { background-color:#686868; }
+  40% { background-color:#787878; }
+  50% { background-color:#828282; }
+  60% { background-color:#787878; }
+  70% { background-color:#686868; }
+  80% { background-color:#585858; }
+  90% { background-color:#383838; }
+  100% { background-color:#1a1a1a; }
+}
+
+.back-tile {
+  background-color:#1a1a1a;
+  position:fixed;
+  animation:back-tile 15s infinite;
+  opacity: 0.6;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:-1;
+}
