@@ -1,14 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-body {
-  padding:20px;
-  background: #fff;
-}
-
 .topic-accordion {
   display:block;
   width:80%;
@@ -30,7 +19,7 @@ body {
     -moz-border-radius:7px;
     border-radius:7px;
     border-top:solid 1px #ccc;
-    background-color:#e7e7e7;
+    background-color: white;
     color: #333333;
     cursor: pointer;
     -webkit-transition: .2s ease-in-out;
@@ -73,7 +62,7 @@ body {
     padding:10px 10px 10px 10px;
     font-size:small;
     overflow:hidden;
-    background-color:#e7e7e7;
+    background-color: white;
     li {
       a {
         line-height:40px;
