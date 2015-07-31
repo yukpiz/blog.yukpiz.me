@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bgswitcher/jquery.bgswitcher.js
+//= require highlight/highlight.pack.js
 //= require_directory .

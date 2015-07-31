@@ -34,15 +34,27 @@
     margin: 10px 0 10px 0;
   }
 
+  pre {
+    background-color:#f4f3ec;
+    border: solid 2px #dbd9cc;
+    font-size: 9pt;
+    line-height: 15pt;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    code {
+    }
+  }
+
   p {
     margin: 10px 0 10px 0;
     line-height: 19pt;
     code {
-      border: solid 1px #c0c0c0;
-      background-color: #e7e7e7;
-      border-radius: 3px;
+      border: solid 1px #dbd9cc;
+      background-color: #f4f3ec;
       margin: 0 4px 0 4px;
       padding: 3px 5px 3px 5px;
+      border-radius: 3px;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
     }
