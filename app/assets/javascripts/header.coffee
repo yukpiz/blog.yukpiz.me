@@ -1,5 +1,5 @@
 $ ->
-    $(".back-picture").bgswitcher ({
+    $("body").bgswitcher ({
         images: [
             "/assets/back00.jpg",
             "/assets/back01.jpg",
