@@ -1,13 +1,19 @@
-body {
-  background-size: cover;
-  width:100%;
+html, body {
+  height: 100%;
+}
+
+.back-picture {
+  background-image: url("/assets/back02.jpg");
+  width: 100%;
   height:100%;
-  top:0;
-  left:0;
-  bottom:0;
-  right:0;
-  padding:0;
+  opacity: 0.6;
+  background-size: cover;
+  background-attachment: fixed;
+  position:fixed;
   margin:0;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
 }
 
 @keyframes back-tile {
@@ -35,4 +41,15 @@ body {
   top:0px;
   left:0px;
   z-index:-1;
+}
+
+.header {
+  position: fixed !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 5em;
+  width: 100%;
+  height: 100px;
+  background-color:red;
 }
