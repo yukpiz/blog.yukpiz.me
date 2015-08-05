@@ -1,28 +1,27 @@
 <%= render 'shared/header' %>
 
 <div class="topic-content">
-  <div class="topic-content-head">
-  </div>
-
-  <ul>
-    <% @articles.each do |article| %>
-      <div class="article-link">
-        <li>
-          <div>
-            <span class="article-title"><%= article.title %></span>
-          </div>
-          <div>
-            <span class="article-posted"><%= article.posted %></span>
-            <% article.tags.each do |tag| %>
-              <span class="article-tag"><%= tag %></span>
-            <% end %>
-            <span class="article-id"><%= article.gist_id %></span>
-          </div>
-        </li>
+  <% @articles.each do |article| %>
+    <div class="article-link">
+      <div class="line1">
+        <span class="article-title">
+          <i class="icon-paw"></i>
+          <%= article.title %>
+        </span>
       </div>
-    <% end %>
-  </ul>
-
-  <div class="topic-content-foot">
-  </div>
+      <div class="line2">
+        <span class="article-posted">
+          <i class="icon-calendar"></i>
+          <%= article.posted %>
+        </span>
+        <% article.tags.each do |tag| %>
+          <span class="article-tag">
+            <i class="icon-tags-1"></i>
+            <%= tag %>
+          </span>
+        <% end %>
+        <span class="article-id"><%= article.gist_id %></span>
+      </div>
+    </div>
+  <% end %>
 </div>
