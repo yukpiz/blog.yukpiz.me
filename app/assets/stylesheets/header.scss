@@ -44,12 +44,18 @@ html, body {
 }
 
 .header {
-  position: fixed !important;
-  position: absolute;
-  top: 0;
-  left: 0;
   font-size: 5em;
+  left: 0;
+  top: 0;
+  text-align: center;
   width: 100%;
-  height: 100px;
-  background-color:red;
+  height: 150px;
+  line-height: 150px;
+  color: white;
+
+  i {
+    opacity: 0.6;
+    cursor: pointer;
+    line-height: 150px;
+  }
 }
