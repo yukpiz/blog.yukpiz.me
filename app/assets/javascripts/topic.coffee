@@ -12,22 +12,10 @@ $ ->
         return if sub_click
         host = location.host
         id = $(@).find(".article-id").html()
-        url = "article/" + id
+        url = "http://" + host + "/article/" + id
         window.location = url
 
-    emoticons = [
-        "icon-emo-happy",
-        "icon-emo-wink",
-        "icon-emo-wink2",
-        "icon-emo-unhappy",
-        "icon-emo-sleep",
-        "icon-emo-thumbsup",
-        "icon-emo-tongue",
-        "icon-emo-coffee",
-        "icon-emo-grin",
-        "icon-emo-laugh",
-    ]
-    $(".random_emoticon").each ->
-        random = Math.round(Math.random() * 9)
-        $(@).addClass emoticons[random]
-
+    $(".link-page").click ->
+        host = location.host
+        page = $(@).attr("tag")
+        window.location = page

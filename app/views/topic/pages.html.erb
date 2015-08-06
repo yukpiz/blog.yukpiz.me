@@ -1,5 +1,11 @@
 <%= render 'shared/header' %>
 
+<div class="page_content">
+  <% @pagings.each do |page, cls| %>
+    <span class="<%= cls %>" tag="<%= page %>"><%= page %></span>
+  <% end %>
+</div>
+
 <div class="topic-content">
   <% @articles.each do |article| %>
     <div class="article-link">
