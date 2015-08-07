@@ -19,3 +19,8 @@ $ ->
         host = location.host
         page = $(@).attr("tag")
         window.location = page
+
+    $(".link-enable").click ->
+        host = location.host
+        page = $(@).attr("tag")
+        window.location = page

@@ -1,9 +1,19 @@
 <%= render 'shared/header' %>
 
-<div class="page_content">
-  <% @pagings.each do |page, cls| %>
-    <span class="<%= cls %>" tag="<%= page %>"><%= page %></span>
-  <% end %>
+<div class="page-content">
+  <div class="left-page-content">
+    <span class="<%= @jumps[:first][0] %>" tag="<%= @jumps[:first][1] %>">&lt;&lt;</span>
+    <span class="<%= @jumps[:prev][0] %>" tag="<%= @jumps[:prev][1] %>">&lt;</span>
+  </div>
+  <div class="center-page-content">
+    <% @pagings.each do |page, cls| %>
+      <span class="<%= cls %>" tag="<%= page %>"><%= page %></span>
+    <% end %>
+  </div>
+  <div class="right-page-content">
+    <span class="<%= @jumps[:next][0] %>" tag="<%= @jumps[:next][1] %>">&gt;</span>
+    <span class="<%= @jumps[:last][0] %>" tag="<%= @jumps[:last][1] %>">&gt;&gt;</span>
+  </div>
 </div>
 
 <div class="topic-content">
@@ -31,3 +41,20 @@
     </div>
   <% end %>
 </div>
+
+<div class="page-content">
+  <div class="left-page-content">
+    <span class="<%= @jumps[:first][0] %>" tag="<%= @jumps[:first][1] %>">&lt;&lt;</span>
+    <span class="<%= @jumps[:prev][0] %>" tag="<%= @jumps[:prev][1] %>">&lt;</span>
+  </div>
+  <div class="center-page-content">
+    <% @pagings.each do |page, cls| %>
+      <span class="<%= cls %>" tag="<%= page %>"><%= page %></span>
+    <% end %>
+  </div>
+  <div class="right-page-content">
+    <span class="<%= @jumps[:next][0] %>" tag="<%= @jumps[:next][1] %>">&gt;</span>
+    <span class="<%= @jumps[:last][0] %>" tag="<%= @jumps[:last][1] %>">&gt;&gt;</span>
+  </div>
+</div>
+

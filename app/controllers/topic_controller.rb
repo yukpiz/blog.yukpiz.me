@@ -4,11 +4,9 @@ class TopicController < ApplicationController
     end
 
     def pages
-        max_article = 5
+        max_article = 7
         max_page = 5
         request_page = 0
-
-        puts params[:jump]
 
         begin
             request_page = params[:page].to_i
@@ -33,6 +31,36 @@ class TopicController < ApplicationController
         @pagings = {}
         for p in first_page..last_page do
             @pagings[p] = p == request_page ? "active-page" : "link-page"
+        end
+
+        @jumps = {}
+        if request_page == 1
+            @jumps[:first] =
+                ["link-disable", 1]
+        else
+            @jumps[:first] =
+                ["link-enable", 1]
+        end
+
+        if first_page - max_page < 1
+            @jumps[:prev] =
+                ["link-disable", 1]
+        else
+            @jumps[:prev] =
+                ["link-enable", first_page - max_page]
+        end
+
+        max_last_page = (articles.size.to_f / max_article.to_f).ceil
+        if request_page >= max_last_page
+            @jumps[:last] = ["link-disable", request_page]
+        else
+            @jumps[:last] = ["link-enable", max_last_page]
+        end
+
+        if last_page + 1 >= max_last_page
+            @jumps[:next] = ["link-disable", request_page]
+        else
+            @jumps[:next] = ["link-enable", last_page + 1]
         end
 
         skip_count = (request_page - 1) * max_article

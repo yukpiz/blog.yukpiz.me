@@ -1,7 +1,28 @@
-.page_content {
-  width: 80%;
-  margin: 10px auto 20px auto;
+.page-content {
+  width: 65%;
+  height: 50px;
+  margin: 30px auto 0 auto;
   text-align: center;
+
+  .left-page-content {
+    text-align: right;
+    width: 20%;
+    height: 100%;
+    float: left;
+  }
+
+  .center-page-content {
+    width: 60%;
+    height: 100%;
+    float: left;
+  }
+
+  .right-page-content {
+    text-align:left;
+    width: 20%;
+    height: 100%;
+    float: left;
+  }
 
   span {
     margin: 0 5px 0 5px;
@@ -12,16 +33,20 @@
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    opacity: 0.6;
+    opacity: 0.5;
     background: rgba(0,0,0,0.4);
   }
 
-  .link-page {
+  .link-page, .link-enable {
     cursor: pointer;
     &:hover {
       color: #3b5260;
       background: #dbe1e5;
     }
+  }
+
+  .link-disable {
+    opacity: 0.2;
   }
 
   .active-page {
