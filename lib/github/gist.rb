@@ -74,6 +74,7 @@ class Github::Gist
                 #  title: {BLOG TITLE}\n
                 #  tags: {tag1},{tag2},{tag3}\n
                 #  posted: {POST DATE}\n
+                #  series: {SERIES TITLE}\n
                 #  activate: {true or false}\n
                 #-->
                 markdown = download(gistfile[:raw_url])
@@ -82,6 +83,7 @@ class Github::Gist
                 next if meta.has_key?("title")
                 next if meta.has_key?("tags")
                 next if meta.has_key?("posted")
+                #next if meta.has_key?("series")
                 next if meta.has_key?("activate")
 
                 html = md2html(markdown)
@@ -92,6 +94,7 @@ class Github::Gist
                     tags: meta[:tags],
                     posted: meta[:posted],
                     activate: meta[:activate],
+                    series: meta[:series],
                     source: gisthead[:url],
                     html: html,
                 })
@@ -161,6 +164,8 @@ class Github::Gist
                 ]
             when "activate"
                 meta[:activate] = splited[1].strip.downcase == "true" ? true : false
+            when "series"
+                meta[:series] = splited[1].strip
             end
         end
 
