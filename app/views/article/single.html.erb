@@ -1,9 +1,21 @@
 <%= render 'shared/header' %>
 
 <div class="single-article">
+
   <div class="content">
+    <div class="meta" gist_id="<%= @article.gist_id %>" title="<%= @article.title %>"></div>
     <!-- Content of article -->
-    <div class="posted"><%= @article.posted %></div>
+    <div class="sns-area">
+      <div class="gplus-button">
+        <i class="icon-gplus-squared"></i>
+      </div>
+      <div class="facebook-button">
+        <i class="icon-facebook-squared"></i>
+      </div>
+      <div class="twitter-button">
+        <i class="icon-twitter-squared"></i>
+      </div>
+    </div>
     <%= @article.html.html_safe %>
   </div>
 </div>
