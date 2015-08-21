@@ -2,11 +2,17 @@ $ ->
     sub_click = false
     $(".article-tag").click ->
         sub_click = true
-        window.location = "/"
+        host = location.host
+        tag = $(@).attr("tag")
+        url = "http://" + host + "/tags/" + tag
+        window.location = url
 
     $(".article-posted").click ->
         sub_click = true
-        window.location = "/"
+        host = location.host
+        posted = $(@).attr("posted")
+        url = "http://" + host + "/date/" + posted
+        window.location = url
 
     $(".article-link").click ->
         return if sub_click

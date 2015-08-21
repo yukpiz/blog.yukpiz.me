@@ -7,8 +7,12 @@ class TopicController < ApplicationController
         max_article = 7
         max_page = 5
         request_page = 0
+        request_date = nil
+        request_tag = nil
 
         begin
+            request_date = params[:date]
+            request_tag = params[:tag]
             request_page = params[:page].to_i
             raise if request_page < 1
         rescue Exception => e
@@ -16,8 +20,25 @@ class TopicController < ApplicationController
                 :status=>"404 Not Found." and return
         end
 
-        articles = Article.where(:activate => true).
-            sort(posted: -1)
+        articles = nil
+        if request_tag
+            #タグ別ページ
+            articles = Article.where({
+                :activate => true,
+                :tags.in => [request_tag],
+            }).sort(posted: -1)
+        elsif request_date
+            #日付別ページ
+            articles = Article.where({
+                :activate => true,
+                :posted => request_date,
+            })
+        else
+            #記事一覧ページ
+            articles = Article.where({
+                :activate => true
+            }).sort(posted: -1)
+        end
 
         first_page = (request_page - 1) / max_page * max_page + 1
         last_page = (request_page + max_page - 1) / max_page * max_page

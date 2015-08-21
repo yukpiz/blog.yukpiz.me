@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
     root 'topic#first'
-    get '/article/:id' => 'article#single'
     get '/topic/:page' => 'topic#pages'
-    get '/tags/:tag' => 'topic#tags'
+
+    get '/tags/:tag' => 'topic#first'
+    get '/tags/:tag/:page' => 'topic#pages'
+
+    get '/date/:date' => 'topic#first'
+    get '/date/:date/:page' => 'topic#pages'
+
+    get '/article/:id' => 'article#single'
+
     mount Deploy::API => "/"
     mount Import::API => "/"
     mount Convert::API => "/"

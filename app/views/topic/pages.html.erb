@@ -26,12 +26,12 @@
         </span>
       </div>
       <div class="line2">
-        <span class="article-posted">
+        <span class="article-posted" posted="<%= article.posted %>">
           <i class="icon-calendar"></i>
           <%= article.posted %>
         </span>
         <% article.tags.each do |tag| %>
-          <span class="article-tag">
+          <span class="article-tag" tag="<%= tag %>">
             <i class="icon-tags-1"></i>
             <%= tag %>
           </span>
