@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     mount Import::API => "/"
     mount Convert::API => "/"
     mount Testdata::API => "/"
+
+    get '/xml/rss' => 'xml#rss'
 end
