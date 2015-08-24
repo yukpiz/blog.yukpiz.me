@@ -90,13 +90,15 @@
     line-height: 19pt;
     code {
       border: solid 1px #dbd9cc;
-      color: #263945;
-      background: rgba(255,255,255,0.5);
+      color: #ececec;
+      background: rgba(63,63,63,0.5);
       margin: 0 4px 0 4px;
       padding: 3px 5px 3px 5px;
       border-radius: 3px;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
+      font-size: 10.5pt;
+      font-family: 'Inconsolata', monospace;
     }
   }
 
