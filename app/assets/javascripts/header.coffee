@@ -31,7 +31,7 @@ $ ->
             rand = 0
         $(".random-swap").html(rand)
 
-    $(".home-title").click ->
+    $(".site-title").click ->
         location.href = "/"
 
     $(".link-license").click ->
