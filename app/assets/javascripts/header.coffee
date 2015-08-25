@@ -25,7 +25,10 @@ $ ->
         rand = Math.floor(Math.random() * 101)
         $(".random-memory").html(rand)
 
-        rand = Math.floor(Math.random() * 51)
+        if rand >= 95
+            rand = Math.floor(Math.random() * 51)
+        else
+            rand = 0
         $(".random-swap").html(rand)
 
     $(".home-title").click ->
