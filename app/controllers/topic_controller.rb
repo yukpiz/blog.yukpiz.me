@@ -4,7 +4,7 @@ class TopicController < ApplicationController
     end
 
     def pages
-        max_article = 7
+        max_article = 5
         max_page = 5
         request_page = 0
         request_date = nil
