@@ -53,13 +53,14 @@ html {
   color: white;
 
   .home-title {
-    cursor: pointer;
     opacity: 0.6;
     font-size: 5em;
     font-family: 'Syncopate';
+    cursor:pointer;
 
     &:hover {
       color: #89a2b1;
+      background-color:transparent;
     }
   }
 }

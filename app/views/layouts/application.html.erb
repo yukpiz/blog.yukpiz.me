@@ -5,6 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag('application', 'http://fonts.googleapis.com/css?family=Slabo+27px|Inconsolata') %>
+  <%= stylesheet_link_tag('application', 'http://fonts.googleapis.com/css?family=Play') %>
+  <%= stylesheet_link_tag('application', 'http://fonts.googleapis.com/css?family=Syncopate') %>
 
   <!-- Google Analytics -->
   <script>
@@ -18,7 +21,11 @@
 </head>
 <body>
 
+<div class="body-content">
+<%= render 'shared/header' %>
 <%= yield %>
+<%= render 'shared/footer' %>
+</div>
 
 </body>
 </html>
