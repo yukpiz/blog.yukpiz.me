@@ -6,6 +6,8 @@ gem 'redcarpet'
 gem 'rb-readline'
 gem 'grape'
 gem 'mongoid', '4.0.0'
+gem 'mongo'
+gem 'bson_ext'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
