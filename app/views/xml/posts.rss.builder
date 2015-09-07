@@ -4,12 +4,12 @@ host = request.host_with_port
 
 xml.rss(
     "version" => "2.0",
-    "xmlns:dc" => "http://purl.org/dc/elements/1.1"
 ) do
     xml.channel do
         xml.title @feed_title
         xml.link(request.protocol + request.host_with_port)
         xml.language "ja-ja"
+        xml.description @feed_description
 
         @articles.each do |article|
             xml.item do
