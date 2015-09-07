@@ -10,10 +10,11 @@ Rails.application.routes.draw do
 
     get '/article/:id' => 'article#single'
 
+    get '/posts' => 'xml#posts'
+
     mount Deploy::API => "/"
     mount Import::API => "/"
     mount Convert::API => "/"
     mount Testdata::API => "/"
 
-    get '/xml/rss' => 'xml#rss'
 end
