@@ -21,7 +21,7 @@ xml.rss(
                 xml.guid(request.protocol +
                          request.host_with_port +
                          "/article/" + article.gist_id)
-                xml.description(article.html)
+                xml.description("Contents of article.")
                 xml.pubDate(article.created_at)
                 xml.author "yukpiz@gmail.com"
             end
