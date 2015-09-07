@@ -21,7 +21,7 @@ xml.rss(
                          request.host_with_port +
                          "/article/" + article.gist_id)
                 xml.description("Contents of article.")
-                xml.pubDate(article.created_at.to_s(:rfc822))
+                xml.pubDate(Time.parse(article.posted).rfc822)
                 xml.author "yukpiz@gmail.com (Yuuki Zayasu)"
             end
         end
