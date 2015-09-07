@@ -10,7 +10,6 @@ xml.rss(
         xml.title @feed_title
         xml.link(request.protocol + request.host_with_port)
         xml.language "ja-ja"
-        xml.pubDate(Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"))
 
         @articles.each do |article|
             xml.item do
@@ -22,7 +21,7 @@ xml.rss(
                          request.host_with_port +
                          "/article/" + article.gist_id)
                 xml.description("Contents of article.")
-                xml.pubDate(article.created_at)
+                xml.pubDate(article.created_at.to_s(:rfc822))
                 xml.author "yukpiz@gmail.com"
             end
         end
