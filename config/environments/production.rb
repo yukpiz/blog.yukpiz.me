@@ -36,6 +36,8 @@ Rails.application.configure do
   config.assets.digest = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+  config.assets.paths << Rails.root.join("app", "assets", "stylesheets", "fontello", "font")
+  config.assets.precompile += %W( .svg .eot .woff .ttf )
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
